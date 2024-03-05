@@ -11,6 +11,7 @@ export default authMiddleware({
     '/privacypolicy',
     'termsofservice',
     '/signin',
+    '/signup',
   ],
   // Routes that can always be accessed, and have
   // no authentication information

@@ -1,0 +1,10 @@
+.main {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 4rem 0;
+}

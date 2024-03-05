@@ -1,17 +1,17 @@
-import { SignIn } from '@clerk/clerk-react';
+import { SignUp } from '@clerk/clerk-react';
 import Layout from '@/components/Layout';
-import styles from '@/styles/signin.module.css';
+import styles from '@/styles/signup.module.css';
 
-const SignInPage = () => {
+const SignUpPage = () => {
   return (
     <Layout>
       <main className={`${styles.main} container`}>
         <div className={styles.container}>
-          <SignIn signUpUrl='/signup' />
+          <SignUp signInUrl='/signin' />
         </div>
       </main>
     </Layout>
   );
 };
 
-export default SignInPage;
+export default SignUpPage;

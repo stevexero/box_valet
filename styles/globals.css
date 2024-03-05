@@ -145,6 +145,18 @@ a {
   border-radius: 50%;
 }
 
+.cl-internal-b3fm6y {
+  display: none;
+}
+
+.cl-formButtonPrimary {
+  background: var(--red-orange);
+}
+
+.cl-formButtonPrimary:hover {
+  background-color: var(--red-orange);
+}
+
 /* Mobile */
 @media (max-width: 767px) {
   html,
