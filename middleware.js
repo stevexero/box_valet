@@ -9,7 +9,7 @@ export default authMiddleware({
     '/howitworks',
     '/pricing',
     '/privacypolicy',
-    'termsofservice',
+    '/termsofservice',
     '/signin',
     '/signup',
   ],
