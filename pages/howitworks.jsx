@@ -16,7 +16,7 @@ const howitworks = () => {
   return (
     <Layout>
       <div className='container mx-auto max-w-6xl mb-20'>
-        <h1 className='text-5xl text-center mt-20 mb-12'>
+        <h1 className='text-5xl text-center mt-32 md:mt-20 mb-12'>
           How to Valet your items with BoxValet
         </h1>
         <Accordion className='divide-black-primary dark:divide-black-primary'>
