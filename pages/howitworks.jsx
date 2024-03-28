@@ -6,13 +6,22 @@ import {
 } from 'flowbite-react';
 import Layout from '@/components/Layout';
 
+// .heading_primary {
+//   font-size: 48px;
+//   font-weight: 500;
+//   line-height: 48px;
+// }
+
 const howitworks = () => {
   return (
     <Layout>
-      <div className='container mx-auto'>
-        <Accordion className='divide-gray-900 dark:divide-gray-900'>
+      <div className='container mx-auto max-w-6xl mb-20'>
+        <h1 className='text-5xl text-center mt-20 mb-12'>
+          How to Valet your items with BoxValet
+        </h1>
+        <Accordion className='divide-black-primary dark:divide-black-primary'>
           <AccordionPanel>
-            <AccordionTitle className='text-white dark:text-white dark:hover:bg-red-700 hover:bg-red-700 bg-red-600 dark:bg-red-600 focus:ring-1 focus:ring-red-900 dark:focus:ring-red-900'>
+            <AccordionTitle className='text-white dark:text-white dark:hover:bg-accent-primary-hover hover:bg-accent-primary-hover bg-accent-primary dark:bg-accent-primary focus:ring-1 focus:ring-red-900 dark:focus:ring-red-900'>
               Step 1: Set up an account
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
@@ -22,7 +31,7 @@ const howitworks = () => {
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
-            <AccordionTitle className='text-white dark:text-white dark:hover:bg-red-700 hover:bg-red-700 bg-red-600 dark:bg-red-600 focus:ring-1 focus:ring-red-900 dark:focus:ring-red-900'>
+            <AccordionTitle className='text-white dark:text-white dark:hover:bg-accent-primary-hover hover:bg-accent-primary-hover bg-accent-primary dark:bg-accent-primary focus:ring-1 focus:ring-red-900 dark:focus:ring-red-900'>
               Step 2: Provide Description Of Your Items
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
@@ -32,7 +41,7 @@ const howitworks = () => {
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
-            <AccordionTitle className='text-white dark:text-white dark:hover:bg-red-700 hover:bg-red-700 bg-red-600 dark:bg-red-600 focus:ring-1 focus:ring-red-900 dark:focus:ring-red-900'>
+            <AccordionTitle className='text-white dark:text-white dark:hover:bg-accent-primary-hover hover:bg-accent-primary-hover bg-accent-primary dark:bg-accent-primary focus:ring-1 focus:ring-red-900 dark:focus:ring-red-900'>
               Step 3: Set up Box Delivery (If You Need Boxes)
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
@@ -42,19 +51,19 @@ const howitworks = () => {
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
-            <AccordionTitle className='text-white dark:text-white dark:hover:bg-red-700 hover:bg-red-700 bg-red-600 dark:bg-red-600 focus:ring-1 focus:ring-red-900 dark:focus:ring-red-900'>
+            <AccordionTitle className='text-white dark:text-white dark:hover:bg-accent-primary-hover hover:bg-accent-primary-hover bg-accent-primary dark:bg-accent-primary focus:ring-1 focus:ring-red-900 dark:focus:ring-red-900'>
               Step 4: Determine Time Frame Needed to Store Your Items (Days,
               Weeks, Months, Etc.)
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
-              We&apos;ll store your stuff for as little or as much time as you’d
-              like Whether it&apos;s a day, a few weeks, several months or
-              years, or you need a rotation of time-frames, your items will
-              always be well taken care of and within reach.
+              We&apos;ll store your stuff for as little or as much time as
+              you&apos;d like Whether it&apos;s a day, a few weeks, several
+              months or years, or you need a rotation of time-frames, your items
+              will always be well taken care of and within reach.
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
-            <AccordionTitle className='text-white dark:text-white dark:hover:bg-red-700 hover:bg-red-700 bg-red-600 dark:bg-red-600 focus:ring-1 focus:ring-red-900 dark:focus:ring-red-900'>
+            <AccordionTitle className='text-white dark:text-white dark:hover:bg-accent-primary-hover hover:bg-accent-primary-hover bg-accent-primary dark:bg-accent-primary focus:ring-1 focus:ring-red-900 dark:focus:ring-red-900'>
               Step 5: Schedule Pick Up of Your Items
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
@@ -63,7 +72,7 @@ const howitworks = () => {
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
-            <AccordionTitle className='text-white dark:text-white dark:hover:bg-red-700 hover:bg-red-700 bg-red-600 dark:bg-red-600 focus:ring-1 focus:ring-red-900 dark:focus:ring-red-900'>
+            <AccordionTitle className='text-white dark:text-white dark:hover:bg-accent-primary-hover hover:bg-accent-primary-hover bg-accent-primary dark:bg-accent-primary focus:ring-1 focus:ring-red-900 dark:focus:ring-red-900'>
               Step 6: Meet with BoxValet Team Member to Verify and Pick Up Items
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
@@ -74,7 +83,7 @@ const howitworks = () => {
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
-            <AccordionTitle className='text-white dark:text-white dark:hover:bg-red-700 hover:bg-red-700 bg-red-600 dark:bg-red-600 focus:ring-1 focus:ring-red-900 dark:focus:ring-red-900'>
+            <AccordionTitle className='text-white dark:text-white dark:hover:bg-accent-primary-hover hover:bg-accent-primary-hover bg-accent-primary dark:bg-accent-primary focus:ring-1 focus:ring-red-900 dark:focus:ring-red-900'>
               Step 7: Await Storage Verification Upon Warehouse Arrival
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
@@ -84,7 +93,7 @@ const howitworks = () => {
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
-            <AccordionTitle className='text-white dark:text-white dark:hover:bg-red-700 hover:bg-red-700 bg-red-600 dark:bg-red-600 focus:ring-1 focus:ring-red-900 dark:focus:ring-red-900'>
+            <AccordionTitle className='text-white dark:text-white dark:hover:bg-accent-primary-hover hover:bg-accent-primary-hover bg-accent-primary dark:bg-accent-primary focus:ring-1 focus:ring-red-900 dark:focus:ring-red-900'>
               Step 8: Check Your BoxValet Dashboard For Updated Info About Your
               Items and Account
             </AccordionTitle>
@@ -98,7 +107,7 @@ const howitworks = () => {
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
-            <AccordionTitle className='text-white dark:text-white dark:hover:bg-red-700 hover:bg-red-700 bg-red-600 dark:bg-red-600 focus:ring-1 focus:ring-red-900 dark:focus:ring-red-900'>
+            <AccordionTitle className='text-white dark:text-white dark:hover:bg-accent-primary-hover hover:bg-accent-primary-hover bg-accent-primary dark:bg-accent-primary focus:ring-1 focus:ring-red-900 dark:focus:ring-red-900'>
               Step 9: When Needed, Schedule the Return of Any or All of Your
               Items
             </AccordionTitle>
