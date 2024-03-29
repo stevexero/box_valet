@@ -4,13 +4,8 @@ import {
   AccordionPanel,
   AccordionTitle,
 } from 'flowbite-react';
+import Image from 'next/image';
 import Layout from '@/components/Layout';
-
-// .heading_primary {
-//   font-size: 48px;
-//   font-weight: 500;
-//   line-height: 48px;
-// }
 
 const howitworks = () => {
   return (
@@ -25,9 +20,21 @@ const howitworks = () => {
               Step 1: Set up an account
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
-              First, you&apos;ll need to set up an account with us Sign Up Now
-              Or if you&apos;d prefer to have us set it up for you, give us a
-              call at +1 (702) 689 9811
+              <div className='flex flex-row'>
+                <Image
+                  src='/acc1.svg'
+                  alt='setting up account'
+                  width={298}
+                  height={199}
+                />
+                <div>
+                  <h2 className='text-4xl'>
+                    First, you&apos;ll need to set up an account with us
+                  </h2>
+                  Sign Up Now Or if you&apos;d prefer to have us set it up for
+                  you, give us a call at +1 (702) 689 9811
+                </div>
+              </div>
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
@@ -35,9 +42,21 @@ const howitworks = () => {
               Step 2: Provide Description Of Your Items
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
-              Our Item-Intake form will guide you through the process We&apos;ll
-              base your custom pricing on the dimensions and weight of your
-              items.
+              <div className='flex flex-row'>
+                <div>
+                  <h2 className='text-4xl'>
+                    Our Item-Intake form will guide you through the process
+                  </h2>
+                  We&apos;ll base your custom pricing on the dimensions and
+                  weight of your items.
+                </div>
+                <Image
+                  src='/acc2.svg'
+                  alt='setting up account'
+                  width={298}
+                  height={199}
+                />
+              </div>
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
@@ -45,9 +64,22 @@ const howitworks = () => {
               Step 3: Set up Box Delivery (If You Need Boxes)
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
-              If you need any boxes or containers for your items, we&apos;re
-              happy to provide We&apos;ll consult with you to determine the
-              appropriate sizes and containers for your items.
+              <div className='flex flex-row'>
+                <Image
+                  src='/acc3.svg'
+                  alt='setting up account'
+                  width={298}
+                  height={199}
+                />
+                <div>
+                  <h2 className='text-4xl'>
+                    If you need any boxes or containers for your items,
+                    we&apos;re happy to provide
+                  </h2>
+                  We&apos;ll consult with you to determine the appropriate sizes
+                  and containers for your items.
+                </div>
+              </div>
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
@@ -56,10 +88,23 @@ const howitworks = () => {
               Weeks, Months, Etc.)
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
-              We&apos;ll store your stuff for as little or as much time as
-              you&apos;d like Whether it&apos;s a day, a few weeks, several
-              months or years, or you need a rotation of time-frames, your items
-              will always be well taken care of and within reach.
+              <div className='flex flex-row'>
+                <div>
+                  <h2 className='text-4xl'>
+                    We&apos;ll store your stuff for as little or as much time as
+                    you&apos;d like
+                  </h2>
+                  Whether it&apos;s a day, a few weeks, several months or years,
+                  or you need a rotation of time-frames, your items will always
+                  be well taken care of and within reach.
+                </div>
+                <Image
+                  src='/acc4.svg'
+                  alt='setting up account'
+                  width={298}
+                  height={199}
+                />
+              </div>
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
@@ -67,8 +112,21 @@ const howitworks = () => {
               Step 5: Schedule Pick Up of Your Items
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
-              Choose your pick up date and time once your items are packed up
-              and ready to go Our schedule is open to yours.
+              <div className='flex flex-row'>
+                <Image
+                  src='/acc5.svg'
+                  alt='setting up account'
+                  width={298}
+                  height={199}
+                />
+                <div>
+                  <h2 className='text-4xl'>
+                    Choose your pick up date and time once your items are packed
+                    up and ready to go
+                  </h2>
+                  Our schedule is open to yours.
+                </div>
+              </div>
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
@@ -76,10 +134,23 @@ const howitworks = () => {
               Step 6: Meet with BoxValet Team Member to Verify and Pick Up Items
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
-              Your BoxValet team member will arrive as scheduled for pick up
-              They will then verify your items for pick up, leave you with a
-              signed manifest, and instructions on how to track your items
-              through your BoxValet dashboard.
+              <div className='flex flex-row'>
+                <div>
+                  <h2 className='text-4xl'>
+                    Your BoxValet team member will arrive as scheduled for pick
+                    up
+                  </h2>
+                  They will then verify your items for pick up, leave you with a
+                  signed manifest, and instructions on how to track your items
+                  through your BoxValet dashboard.
+                </div>
+                <Image
+                  src='/acc6.svg'
+                  alt='setting up account'
+                  width={298}
+                  height={199}
+                />
+              </div>
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
@@ -87,9 +158,22 @@ const howitworks = () => {
               Step 7: Await Storage Verification Upon Warehouse Arrival
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
-              You will be notified once your items hit your BoxValet storage bin
-              We provide a variety of notification preferences through your
-              BoxValet dashboard.
+              <div className='flex flex-row'>
+                <Image
+                  src='/acc7.svg'
+                  alt='setting up account'
+                  width={298}
+                  height={199}
+                />
+                <div>
+                  <h2 className='text-4xl'>
+                    You will be notified once your items hit your BoxValet
+                    storage bin
+                  </h2>
+                  We provide a variety of notification preferences through your
+                  BoxValet dashboard.
+                </div>
+              </div>
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
@@ -98,12 +182,25 @@ const howitworks = () => {
               Items and Account
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
-              Manage your items and account through your BoxValet Dashboard From
-              account standings, notification preferences, and analytics on how
-              much CO2 you&apos;ve saved the planet by choosing us versus a
-              big-box storage facility and more, your BoxValet dashboard
-              provides you with a wealth of information to easily manage your
-              items and account.
+              <div className='flex flex-row'>
+                <div>
+                  <h2 className='text-4xl'>
+                    Manage your items and account through your BoxValet
+                    Dashboard
+                  </h2>
+                  From account standings, notification preferences, and
+                  analytics on how much CO2 you&apos;ve saved the planet by
+                  choosing us versus a big-box storage facility and more, your
+                  BoxValet dashboard provides you with a wealth of information
+                  to easily manage your items and account.
+                </div>
+                <Image
+                  src='/acc8.svg'
+                  alt='setting up account'
+                  width={298}
+                  height={199}
+                />
+              </div>
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
@@ -112,9 +209,22 @@ const howitworks = () => {
               Items
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
-              We valet your items back to you when you need them With future or
-              same-day requests at your fingertips, we&apos;ll bring you all or
-              whatever items you need. Let&apos;s Valet Our First Item!
+              <div className='flex flex-row'>
+                <Image
+                  src='/acc9.svg'
+                  alt='setting up account'
+                  width={298}
+                  height={199}
+                />
+                <div>
+                  <h2 className='text-4xl'>
+                    We valet your items back to you when you need them
+                  </h2>
+                  With future or same-day requests at your fingertips,
+                  we&apos;ll bring you all or whatever items you need.
+                  Let&apos;s Valet Our First Item!
+                </div>
+              </div>
             </AccordionContent>
           </AccordionPanel>
         </Accordion>
