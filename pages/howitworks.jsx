@@ -6,6 +6,7 @@ import {
 } from 'flowbite-react';
 import Image from 'next/image';
 import Layout from '@/components/Layout';
+import Link from 'next/link';
 
 const howitworks = () => {
   return (
@@ -20,19 +21,29 @@ const howitworks = () => {
               Step 1: Set up an account
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
-              <div className='flex flex-row'>
+              <div className='flex flex-row items-center'>
                 <Image
                   src='/acc1.svg'
                   alt='setting up account'
                   width={298}
                   height={199}
+                  className='sm:block hidden'
                 />
-                <div>
+                <div className='flex flex-col justify-between items-start'>
                   <h2 className='text-4xl'>
                     First, you&apos;ll need to set up an account with us
                   </h2>
-                  Sign Up Now Or if you&apos;d prefer to have us set it up for
-                  you, give us a call at +1 (702) 689 9811
+                  <Link
+                    href='/signup'
+                    className='bg-accent-primary text-white rounded px-6 py-3 mt-4'
+                  >
+                    Sign Up Now
+                  </Link>
+                  <p className='mt-4'>
+                    Or if you&apos;d prefer to have us set it up for you, give
+                    us a call at{' '}
+                    <Link href='tel:17026899822'>+1 (702) 689 9811</Link>
+                  </p>
                 </div>
               </div>
             </AccordionContent>
@@ -55,6 +66,7 @@ const howitworks = () => {
                   alt='setting up account'
                   width={298}
                   height={199}
+                  className='sm:block hidden'
                 />
               </div>
             </AccordionContent>
@@ -70,6 +82,7 @@ const howitworks = () => {
                   alt='setting up account'
                   width={298}
                   height={199}
+                  className='sm:block hidden'
                 />
                 <div>
                   <h2 className='text-4xl'>
@@ -103,6 +116,7 @@ const howitworks = () => {
                   alt='setting up account'
                   width={298}
                   height={199}
+                  className='sm:block hidden'
                 />
               </div>
             </AccordionContent>
@@ -118,6 +132,7 @@ const howitworks = () => {
                   alt='setting up account'
                   width={298}
                   height={199}
+                  className='sm:block hidden'
                 />
                 <div>
                   <h2 className='text-4xl'>
@@ -149,6 +164,7 @@ const howitworks = () => {
                   alt='setting up account'
                   width={298}
                   height={199}
+                  className='sm:block hidden'
                 />
               </div>
             </AccordionContent>
@@ -164,6 +180,7 @@ const howitworks = () => {
                   alt='setting up account'
                   width={298}
                   height={199}
+                  className='sm:block hidden'
                 />
                 <div>
                   <h2 className='text-4xl'>
@@ -199,6 +216,7 @@ const howitworks = () => {
                   alt='setting up account'
                   width={298}
                   height={199}
+                  className='sm:block hidden'
                 />
               </div>
             </AccordionContent>
@@ -215,6 +233,7 @@ const howitworks = () => {
                   alt='setting up account'
                   width={298}
                   height={199}
+                  className='sm:block hidden'
                 />
                 <div>
                   <h2 className='text-4xl'>
