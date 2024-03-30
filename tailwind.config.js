@@ -5,6 +5,7 @@ module.exports = {
     './pages/howitworks.jsx',
     './components/landingpage/sections/hero/Hero.jsx',
     './components/landingpage/sections/overview/Overview.jsx',
+    './components/landingpage/sections/overview/card/Card.jsx',
   ],
   theme: {
     extend: {

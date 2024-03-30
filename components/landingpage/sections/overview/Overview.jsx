@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Card from './card/Card';
-import styles from './overview.module.css';
 
 export default function Overview() {
   const cardsData = [
@@ -8,7 +7,7 @@ export default function Overview() {
       cardImage: (
         <Image
           src='/truck.png'
-          alt='Isometric Storage Room'
+          alt='Decorative icon'
           width={64}
           height={64}
           priority
@@ -21,7 +20,7 @@ export default function Overview() {
       cardImage: (
         <Image
           src='/clipboard.png'
-          alt='Isometric Storage Room'
+          alt='Decorative icon'
           width={64}
           height={64}
           priority
@@ -34,7 +33,7 @@ export default function Overview() {
       cardImage: (
         <Image
           src='/shelf.png'
-          alt='Isometric Storage Room'
+          alt='Decorative icon'
           width={64}
           height={64}
           priority
@@ -47,7 +46,7 @@ export default function Overview() {
       cardImage: (
         <Image
           src='/hand.png'
-          alt='Isometric Storage Room'
+          alt='Decorative icon'
           width={84}
           height={84}
           priority
@@ -64,7 +63,7 @@ export default function Overview() {
         <h2 className='text-4xl text-center'>
           Sit Back. Relax. We&apos;ll Handle It.
         </h2>
-        <div className='mt-14 grid lg:grid-cols-4 md:grid-cols-2 md:gap-4'>
+        <div className='mt-14 md:grid lg:grid-cols-4 md:grid-cols-2 md:gap-4 flex flex-col justify-center items-center'>
           {cardsData.map((card, index) => (
             <Card
               key={index}
