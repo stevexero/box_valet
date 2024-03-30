@@ -15,16 +15,16 @@ export default function Hero() {
               tailored to your schedule.
             </p>
           </div>
-          <div className='mt-14'>
+          <div className='mt-14 flex flex-col sm:flex-row'>
             <Link
               href='/booking'
-              className='bg-accent-primary text-white rounded-lg px-6 py-3 mt-4 border-2 border-accent-primary'
+              className='bg-accent-primary text-white rounded-lg px-6 py-3 mt-4 border-2 border-accent-primary text-center'
             >
               SCHEDULE YOUR PICKUP TODAY
             </Link>
             <Link
               href='/howitworks'
-              className='rounded-lg px-6 py-3 mt-4 border-2 border-accent-primary ml-4'
+              className='rounded-lg px-6 py-3 mt-4 border-2 border-accent-primary ml-0 sm:ml-4 text-center'
             >
               LEARN MORE
             </Link>
