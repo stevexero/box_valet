@@ -11,7 +11,7 @@ import Link from 'next/link';
 const howitworks = () => {
   return (
     <Layout>
-      <div className='container mx-auto max-w-6xl mb-20'>
+      <div className='container mx-auto max-w-6xl mb-20 p-4'>
         <h1 className='text-5xl text-center mt-32 md:mt-20 mb-12'>
           How to Valet your items with BoxValet
         </h1>
@@ -29,20 +29,25 @@ const howitworks = () => {
                   height={199}
                   className='sm:block hidden'
                 />
-                <div className='flex flex-col justify-between items-start'>
+                <div className='flex flex-col justify-center items-start p-0 sm:p-8'>
                   <h2 className='text-4xl'>
                     First, you&apos;ll need to set up an account with us
                   </h2>
                   <Link
                     href='/signup'
-                    className='bg-accent-primary text-white rounded px-6 py-3 mt-4'
+                    className='bg-accent-primary text-white px-6 py-3 mt-4 rounded-lg'
                   >
                     Sign Up Now
                   </Link>
                   <p className='mt-4'>
                     Or if you&apos;d prefer to have us set it up for you, give
                     us a call at{' '}
-                    <Link href='tel:17026899822'>+1 (702) 689 9811</Link>
+                    <Link
+                      href='tel:17026899822'
+                      className='text-accent-secondary'
+                    >
+                      +1 (702) 689 9811
+                    </Link>
                   </p>
                 </div>
               </div>
@@ -54,12 +59,14 @@ const howitworks = () => {
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
               <div className='flex flex-row'>
-                <div>
+                <div className='flex flex-col justify-center items-start p-0 sm:p-8'>
                   <h2 className='text-4xl'>
                     Our Item-Intake form will guide you through the process
                   </h2>
-                  We&apos;ll base your custom pricing on the dimensions and
-                  weight of your items.
+                  <p className='mt-4'>
+                    We&apos;ll base your custom pricing on the dimensions and
+                    weight of your items.
+                  </p>
                 </div>
                 <Image
                   src='/acc2.svg'
@@ -84,13 +91,15 @@ const howitworks = () => {
                   height={199}
                   className='sm:block hidden'
                 />
-                <div>
+                <div className='flex flex-col justify-center items-start p-0 sm:p-8'>
                   <h2 className='text-4xl'>
                     If you need any boxes or containers for your items,
                     we&apos;re happy to provide
                   </h2>
-                  We&apos;ll consult with you to determine the appropriate sizes
-                  and containers for your items.
+                  <p className='mt-4'>
+                    We&apos;ll consult with you to determine the appropriate
+                    sizes and containers for your items.
+                  </p>
                 </div>
               </div>
             </AccordionContent>
@@ -102,14 +111,16 @@ const howitworks = () => {
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
               <div className='flex flex-row'>
-                <div>
+                <div className='flex flex-col justify-center items-start p-0 sm:p-8'>
                   <h2 className='text-4xl'>
                     We&apos;ll store your stuff for as little or as much time as
                     you&apos;d like
                   </h2>
-                  Whether it&apos;s a day, a few weeks, several months or years,
-                  or you need a rotation of time-frames, your items will always
-                  be well taken care of and within reach.
+                  <p className='mt-4'>
+                    Whether it&apos;s a day, a few weeks, several months or
+                    years, or you need a rotation of time-frames, your items
+                    will always be well taken care of and within reach.
+                  </p>
                 </div>
                 <Image
                   src='/acc4.svg'
@@ -134,12 +145,12 @@ const howitworks = () => {
                   height={199}
                   className='sm:block hidden'
                 />
-                <div>
+                <div className='flex flex-col justify-center items-start p-0 sm:p-8'>
                   <h2 className='text-4xl'>
                     Choose your pick up date and time once your items are packed
                     up and ready to go
                   </h2>
-                  Our schedule is open to yours.
+                  <p className='mt-4'>Our schedule is open to yours.</p>
                 </div>
               </div>
             </AccordionContent>
@@ -150,14 +161,16 @@ const howitworks = () => {
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
               <div className='flex flex-row'>
-                <div>
+                <div className='flex flex-col justify-center items-start p-0 sm:p-8'>
                   <h2 className='text-4xl'>
                     Your BoxValet team member will arrive as scheduled for pick
                     up
                   </h2>
-                  They will then verify your items for pick up, leave you with a
-                  signed manifest, and instructions on how to track your items
-                  through your BoxValet dashboard.
+                  <p className='mt-4'>
+                    They will then verify your items for pick up, leave you with
+                    a signed manifest, and instructions on how to track your
+                    items through your BoxValet dashboard.
+                  </p>
                 </div>
                 <Image
                   src='/acc6.svg'
@@ -182,13 +195,15 @@ const howitworks = () => {
                   height={199}
                   className='sm:block hidden'
                 />
-                <div>
+                <div className='flex flex-col justify-center items-start p-0 sm:p-8'>
                   <h2 className='text-4xl'>
                     You will be notified once your items hit your BoxValet
                     storage bin
                   </h2>
-                  We provide a variety of notification preferences through your
-                  BoxValet dashboard.
+                  <p className='mt-4'>
+                    We provide a variety of notification preferences through
+                    your BoxValet dashboard.
+                  </p>
                 </div>
               </div>
             </AccordionContent>
@@ -200,16 +215,18 @@ const howitworks = () => {
             </AccordionTitle>
             <AccordionContent className='dark:bg-white'>
               <div className='flex flex-row'>
-                <div>
+                <div className='flex flex-col justify-center items-start p-0 sm:p-8'>
                   <h2 className='text-4xl'>
                     Manage your items and account through your BoxValet
                     Dashboard
                   </h2>
-                  From account standings, notification preferences, and
-                  analytics on how much CO2 you&apos;ve saved the planet by
-                  choosing us versus a big-box storage facility and more, your
-                  BoxValet dashboard provides you with a wealth of information
-                  to easily manage your items and account.
+                  <p className='mt-4'>
+                    From account standings, notification preferences, and
+                    analytics on how much CO2 you&apos;ve saved the planet by
+                    choosing us versus a big-box storage facility and more, your
+                    BoxValet dashboard provides you with a wealth of information
+                    to easily manage your items and account.
+                  </p>
                 </div>
                 <Image
                   src='/acc8.svg'
@@ -235,13 +252,20 @@ const howitworks = () => {
                   height={199}
                   className='sm:block hidden'
                 />
-                <div>
+                <div className='flex flex-col justify-center items-start p-0 sm:p-8'>
                   <h2 className='text-4xl'>
                     We valet your items back to you when you need them
                   </h2>
-                  With future or same-day requests at your fingertips,
-                  we&apos;ll bring you all or whatever items you need.
-                  Let&apos;s Valet Our First Item!
+                  <p className='mt-4'>
+                    With future or same-day requests at your fingertips,
+                    we&apos;ll bring you all or whatever items you need.
+                  </p>
+                  <Link
+                    href='/signup'
+                    className='bg-accent-primary text-white rounded-lg px-6 py-3 mt-4'
+                  >
+                    Let&apos;s Valet Our First Item!
+                  </Link>
                 </div>
               </div>
             </AccordionContent>

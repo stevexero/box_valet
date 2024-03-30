@@ -10,6 +10,7 @@ module.exports = {
         'black-primary': '#1D1C1E',
         'accent-primary': '#e93802',
         'accent-primary-hover': '#FF9E90',
+        'accent-secondary': '#009DBC',
       },
     },
   },
