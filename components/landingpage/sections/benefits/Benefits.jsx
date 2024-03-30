@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import styles from './benefits.module.css';
 import Image from 'next/image';
 
 export default function Benefits() {
@@ -7,13 +6,13 @@ export default function Benefits() {
     <>
       <section
         id='Benefits'
-        className={`${styles.benefits_main} padding_tb_121`}
+        className='bg-accent-tertiary md:flex flex-col items-center justify-center w-full py-32 p-4 hidden'
       >
-        <div className='container text_white'>
-          <div className={styles.benefits_container}>
-            <div className={styles.left}>
-              <h2 className='heading_secondary'>Solutions. for Everyone.</h2>
-              <p className='margin_t_25 text_justify'>
+        <div className='max-w-6xl container text_white'>
+          <div className='w-full grid grid-cols-2 gap-12'>
+            <div>
+              <h2 className='text-4xl'>Solutions. for Everyone.</h2>
+              <p className='mt-6 text-justify'>
                 At BoxValet, we believe in providing flexible and efficient
                 storage solutions that cater to a wide array of needs. Whether
                 you&apos;re an individual seeking micro storage options for
@@ -23,7 +22,7 @@ export default function Benefits() {
                 search of a reliable partner to handle event materials, BoxValet
                 has got you covered.
               </p>
-              <p className='margin_t_25 text_justify'>
+              <p className='mt-6 text-justify'>
                 Our tailored services ensure that whether your storage needs are
                 big or small, short-term or ongoing, we provide a hassle-free,
                 secure, and cost-effective solution. With BoxValet, experience
@@ -32,16 +31,16 @@ export default function Benefits() {
                 valuable space and time for what matters most in your personal
                 and professional life.
               </p>
-              <div className='margin_t_51'>
+              <div className='mt-12'>
                 <Link
                   href={'/contactus'}
-                  className='button button_primary corner_radius'
+                  className='bg-accent-primary text-white rounded-lg px-6 py-3 mt-4 border-2 border-accent-primary text-center'
                 >
                   TALK TO OUR EXPERTS
                 </Link>
               </div>
             </div>
-            <div className={styles.right}>
+            <div className='grid lg:grid-cols-2 gap-6'>
               <Image
                 src='/beneimg1.jpg'
                 alt='Women organizing boxes'
@@ -49,7 +48,7 @@ export default function Benefits() {
                 height={251}
                 priority
                 style={{ objectFit: 'cover' }}
-                className='corner_radius'
+                className='rounded-lg justify-self-center lg:justify-self-end self-end'
               />
               <Image
                 src='/beneimg2.jpg'
@@ -58,7 +57,7 @@ export default function Benefits() {
                 height={251}
                 priority
                 style={{ objectFit: 'cover' }}
-                className='corner_radius'
+                className='rounded-lg justify-self-center self-end'
               />
               <Image
                 src='/beneimg3.jpg'
@@ -67,7 +66,7 @@ export default function Benefits() {
                 height={251}
                 priority
                 style={{ objectFit: 'cover' }}
-                className='corner_radius'
+                className='rounded-lg justify-self-center lg:justify-self-end'
               />
               <Image
                 src='/beneimg4.JPG'
@@ -76,16 +75,19 @@ export default function Benefits() {
                 height={251}
                 priority
                 style={{ objectFit: 'cover' }}
-                className='corner_radius'
+                className='rounded-lg justify-self-center'
               />
             </div>
           </div>
         </div>
       </section>
       {/* MOBILE */}
-      <section id='Benefits' className={styles.mobile_benefits_main}>
-        <div className={styles.heading_container}>
-          <h2 className='heading_secondary'>Simple Storage Solutions</h2>
+      <section
+        id='Benefits'
+        className='bg-accent-tertiary text-white md:hidden w-full mt-8 py-10 p-4 flex flex-col items-center justify-center'
+      >
+        <div className='w-full'>
+          <h2 className='text-center text-4xl'>Simple Storage Solutions</h2>
         </div>
         <Image
           src='/beneimg2.jpg'
@@ -93,9 +95,10 @@ export default function Benefits() {
           width={390}
           height={390}
           priority
+          className='mt-6 rounded-lg'
           style={{ objectFit: 'cover' }}
         />
-        <p className='text_justify'>
+        <p className='text-justify mt-6'>
           At BoxValet, we believe in providing flexible and efficient storage
           solutions that cater to a wide array of needs. Whether you&apos;re an
           individual seeking micro storage options for personal belongings, a
@@ -104,8 +107,8 @@ export default function Benefits() {
           or a convention organizer in search of a reliable partner to handle
           event materials, BoxValet has got you covered.
         </p>
-        <div className={styles.heading_container}>
-          <h2 className='heading_secondary'>For Everyone.</h2>
+        <div className='w-full'>
+          <h2 className='text-center mt-6 text-4xl'>For Everyone.</h2>
         </div>
         <Image
           src='/beneimg1.jpg'
@@ -113,9 +116,10 @@ export default function Benefits() {
           width={390}
           height={390}
           priority
+          className='mt-6 rounded-lg'
           style={{ objectFit: 'cover' }}
         />
-        <p className='margin_t_25 text_justify'>
+        <p className='text-justify mt-6'>
           Our tailored services ensure that whether your storage needs are big
           or small, short-term or ongoing, we provide a hassle-free, secure, and
           cost-effective solution. With BoxValet, experience the ease of storage
@@ -123,10 +127,10 @@ export default function Benefits() {
           simplifying logistics and freeing up valuable space and time for what
           matters most in your personal and professional life.
         </p>
-        <div className={styles.button_container}>
+        <div className='mt-12 w-full flex justify-center'>
           <Link
             href={'/contactus'}
-            className='button button_primary corner_radius'
+            className='bg-accent-primary text-white rounded-lg px-6 py-3 mt-4 border-2 border-accent-primary text-center'
           >
             TALK TO OUR EXPERTS
           </Link>

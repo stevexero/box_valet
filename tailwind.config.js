@@ -7,6 +7,7 @@ module.exports = {
     './components/landingpage/sections/hero/Hero.jsx',
     './components/landingpage/sections/overview/Overview.jsx',
     './components/landingpage/sections/overview/card/Card.jsx',
+    './components/landingpage/sections/benefits/Benefits.jsx',
   ],
   theme: {
     extend: {
@@ -15,6 +16,7 @@ module.exports = {
         'accent-primary': '#e93802',
         'accent-primary-hover': '#FF9E90',
         'accent-secondary': '#009DBC',
+        'accent-tertiary': '#532500',
       },
     },
   },
