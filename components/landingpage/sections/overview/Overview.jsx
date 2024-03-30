@@ -59,22 +59,20 @@ export default function Overview() {
   ];
 
   return (
-    <section id='Overview' className={`${styles.overview_main} padding_tb_121`}>
-      <div className='container'>
-        <div className={styles.overview_container}>
-          <h2 className='heading_secondary text_center'>
-            Sit Back. Relax. We&apos;ll Handle It.
-          </h2>
-          <div className={`${styles.card_container} margin_t_51`}>
-            {cardsData.map((card, index) => (
-              <Card
-                key={index}
-                cardImage={card.cardImage}
-                cardHeader={card.cardHeader}
-                cardParagraph={card.cardParagraph}
-              />
-            ))}
-          </div>
+    <section id='Overview' className='max-w-6xl container py-32 px-4'>
+      <div>
+        <h2 className='text-4xl text-center'>
+          Sit Back. Relax. We&apos;ll Handle It.
+        </h2>
+        <div className='mt-14 grid lg:grid-cols-4 md:grid-cols-2 md:gap-4'>
+          {cardsData.map((card, index) => (
+            <Card
+              key={index}
+              cardImage={card.cardImage}
+              cardHeader={card.cardHeader}
+              cardParagraph={card.cardParagraph}
+            />
+          ))}
         </div>
       </div>
     </section>
