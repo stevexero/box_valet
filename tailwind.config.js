@@ -3,6 +3,7 @@ module.exports = {
   content: [
     'node_modules/flowbite-react/lib/esm/**/*.js',
     './pages/howitworks.jsx',
+    './components/navbar/Navbar.jsx',
     './components/landingpage/sections/hero/Hero.jsx',
     './components/landingpage/sections/overview/Overview.jsx',
     './components/landingpage/sections/overview/card/Card.jsx',
