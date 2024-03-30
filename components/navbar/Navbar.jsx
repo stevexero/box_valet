@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from './Navbar.module.css';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,9 +11,9 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={styles.main}>
-        <div className={styles.inner}>
-          <div className={styles.left}>
+      <nav className='w-full py-1 px-4 lg:flex items-center justify-center hidden'>
+        <div className='flex flex-row items-center justify-between w-full max-w-6xl'>
+          <div>
             <Link href='/'>
               <Image
                 src='/logo.svg'
@@ -25,23 +24,43 @@ export default function Navbar() {
               />
             </Link>
           </div>
-          <div className={styles.right}>
-            <ul>
-              <li>
-                <Link href='/howitworks'>HOW IT WORKS</Link>
-              </li>
-              <li>
-                <Link href='/pricing'>PRICING</Link>
-              </li>
-              <li>
-                <Link href='/signin'>SIGN IN</Link>
-              </li>
-              <li>
-                <Link href='/contact'>CONTACT US</Link>
-              </li>
+          <div>
+            <ul className='flex flex-row mt-4'>
               <li>
                 <Link
-                  className='button button_primary corner_radius'
+                  className='hover:text-accent-primary duration-200'
+                  href='/howitworks'
+                >
+                  HOW IT WORKS
+                </Link>
+              </li>
+              <li className='ml-8'>
+                <Link
+                  className='hover:text-accent-primary duration-200'
+                  href='/pricing'
+                >
+                  PRICING
+                </Link>
+              </li>
+              <li className='ml-8'>
+                <Link
+                  className='hover:text-accent-primary duration-200'
+                  href='/signin'
+                >
+                  SIGN IN
+                </Link>
+              </li>
+              <li className='ml-8'>
+                <Link
+                  className='hover:text-accent-primary duration-200'
+                  href='/contact'
+                >
+                  CONTACT US
+                </Link>
+              </li>
+              <li className='ml-8'>
+                <Link
+                  className='bg-accent-primary text-white rounded-lg px-6 py-3 mt-4 border-2 border-accent-primary text-center'
                   href='/booking'
                 >
                   BOOK NOW
@@ -52,8 +71,8 @@ export default function Navbar() {
         </div>
       </nav>
       {/* MOBILE */}
-      <nav className={styles.mobile_main}>
-        <div className={styles.logo}>
+      <nav className='w-full bg-white py-1 px-4 flex flex-row items-center justify-between fixed top-0 lg:hidden'>
+        <div className='relative z-20'>
           <Link href='/'>
             <Image
               src='/logo.svg'
@@ -64,39 +83,37 @@ export default function Navbar() {
             />
           </Link>
         </div>
-        <div className={styles.hamburger}>
-          <div className={styles.container} onClick={toggleMenu}>
+        <div>
+          <div className='cursor-pointer z-20 relative' onClick={toggleMenu}>
             <div
-              className={`${styles.bar} ${isOpen ? styles.changeBar1 : ''}`}
+              className={`w-8 h-1 bg-accent-primary my-1 mx-0 duration-200 origin-center ${isOpen ? '-rotate-45 translate-y-2' : ''}`}
             ></div>
             <div
-              className={`${styles.bar} ${isOpen ? styles.changeBar2 : ''}`}
+              className={`w-8 h-1 bg-accent-primary my-1 mx-0 duration-200 ${isOpen ? 'opacity-0' : 'opacity-100'}`}
             ></div>
             <div
-              className={`${styles.bar} ${isOpen ? styles.changeBar3 : ''}`}
+              className={`w-8 h-1 bg-accent-primary my-1 mx-0 duration-200 origin-center ${isOpen ? 'rotate-45 -translate-y-2' : ''}`}
             ></div>
           </div>
           <div
-            className={`${styles.menuOverlay} ${
-              isOpen ? styles.show : styles.hide
-            }`}
+            className={`fixed top-0 left-0 right-0 bottom-0 z-10 ${isOpen ? 'visible opacity-100' : 'invisible opacity-0'} duration-200 bg-accent-primary-hover`}
           >
-            <ul className={styles.menuItems}>
-              <li onClick={toggleMenu}>
+            <ul className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-white text-xl list-none'>
+              <li className='my-5 mx-0' onClick={toggleMenu}>
                 <Link href='/'>Home</Link>
               </li>
-              <li onClick={toggleMenu}>
+              <li className='my-5 mx-0' onClick={toggleMenu}>
                 <Link href='/howitworks'>How it Works</Link>
               </li>
-              <li onClick={toggleMenu}>
+              <li className='my-5 mx-0' onClick={toggleMenu}>
                 <Link href='/pricing'>Pricing</Link>
               </li>
-              <li onClick={toggleMenu}>
+              <li className='my-5 mx-0' onClick={toggleMenu}>
                 <Link href='/contact'>Contact Us</Link>
               </li>
-              <li className={styles.signinbutton} onClick={toggleMenu}>
+              <li className='mt-12' onClick={toggleMenu}>
                 <Link
-                  className='button button_primary corner_radius'
+                  className='bg-accent-primary text-white rounded-lg px-6 py-3 mt-4 border-2 border-accent-primary text-center'
                   href='/signin'
                 >
                   Sign In
