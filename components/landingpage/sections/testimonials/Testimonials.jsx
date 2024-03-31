@@ -3,7 +3,6 @@ import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import { DotButton, PrevButton, NextButton } from './ArrowsAndButtons';
 import { testimonials } from './TestimonialsByIndex';
-import styles from './testimonials.module.css';
 
 export default function Testimonials() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
@@ -44,63 +43,63 @@ export default function Testimonials() {
   return (
     <section
       id='Testimonials'
-      className={`${styles.testimonials_main} padding_tb_121`}
+      className={`w-full flex flex-col items-center justify-center relative py-32 p-4 bg-black-primary-light`}
     >
       <Image
         src='/dolly.svg'
-        className={styles.dolly_image}
+        className='absolute left-0 bottom-0 hidden lg:block'
         alt='Dolly'
         width={324}
         height={459}
         priority
       />
       <div className='container'>
-        <div className={styles.testimonials_container}>
+        <div className='w-full text-center flex flex-col items-center'>
           <Image
-            className={styles.quote_img}
+            className='w-8 h-8 -mt-8 lg:w-14 lg:h-14'
             src='/quote.svg'
             alt='Quote'
             width={58}
             height={58}
             priority
           />
-          <div className={styles.embla} ref={emblaRef}>
-            <div className={styles.embla__container}>
+          <div className='overflow-hidden max-w-full' ref={emblaRef}>
+            <div
+              className='flex touch-pan-y -ml-4'
+              style={{
+                backfaceVisibility: 'hidden',
+              }}
+            >
               {testimonials.map((testimonial, index) => (
-                <div className={styles.embla__slide} key={index}>
-                  <h3 className='margin_t_36 heading_secondary'>
-                    {testimonial.headerQuote}
-                  </h3>
-                  <p className='margin_t_28'>{testimonial.testimonialText}</p>
+                <div
+                  className='min-w-0 relative cursor-grab flex flex-col items-center active:cursor-grabbing pl-4 flex-none w-full'
+                  key={index}
+                >
+                  <h3 className='mt-9 text-4xl'>{testimonial.headerQuote}</h3>
+                  <p className='mt-7 lg:max-w-2xl text-justify lg:text-center'>
+                    {testimonial.testimonialText}
+                  </p>
                   <Image
                     src={testimonial.avatarImage}
                     alt={testimonial.reviewerName}
                     width={64}
                     height={64}
-                    className='margin_t_36 avatar_img'
+                    className='mt-9 rounded-full'
                     priority
                   />
-                  <p className='margin_t_6'>{testimonial.reviewerName}</p>
+                  <p className='mt-1.5'>{testimonial.reviewerName}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className={`${styles.arrows_and_dots_container} margin_t_36`}>
+          <div className='mt-9 w-full max-w-72 flex flex-row items-center justify-between'>
             <PrevButton onClick={scrollPrev} />
-            <div className={styles.embla__dots}>
+            <div className='w-1/2 flex flex-row items-center justify-evenly'>
               {scrollSnaps.map((_, index) => (
                 <DotButton
                   key={index}
                   onClick={() => scrollTo(index)}
-                  className={styles.dot.concat(
-                    index === selectedIndex ? '_selected' : ''
-                  )}
-                  style={{
-                    border: 'none',
-                    transform:
-                      index === selectedIndex ? 'scale(3, 1)' : 'scale(1, 1)',
-                    transition: '0.4s ease-out',
-                  }}
+                  className={`border-none ${index === selectedIndex ? 'scale-x-[3]' : 'scale-x-100'} duration-200 ease-out`}
                 />
               ))}
             </div>

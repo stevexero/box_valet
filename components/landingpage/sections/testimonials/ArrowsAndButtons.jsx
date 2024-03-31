@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import styles from './arrowsandbuttons.module.css';
 
 export const DotButton = (props) => {
   const { children, ...restProps } = props;
@@ -16,7 +15,7 @@ export const PrevButton = (props) => {
   const { children, ...restProps } = props;
 
   return (
-    <button className={styles.carousel_button} type='button' {...restProps}>
+    <button className='cursor-pointer border-none' type='button' {...restProps}>
       <Image
         src={'/prevbutton.svg'}
         alt={'previous'}
@@ -33,7 +32,7 @@ export const NextButton = (props) => {
   const { children, ...restProps } = props;
 
   return (
-    <button className={styles.carousel_button} type='button' {...restProps}>
+    <button className='cursor-pointer border-none' type='button' {...restProps}>
       <Image
         src={'/nextbutton.svg'}
         alt={'previous'}
