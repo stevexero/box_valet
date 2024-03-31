@@ -8,7 +8,7 @@ export default function Benefits() {
         id='Benefits'
         className='bg-accent-tertiary md:flex flex-col items-center justify-center w-full py-32 p-4 hidden'
       >
-        <div className='max-w-6xl container text_white'>
+        <div className='max-w-6xl container text-white'>
           <div className='w-full grid grid-cols-2 gap-12'>
             <div>
               <h2 className='text-4xl'>Solutions. for Everyone.</h2>

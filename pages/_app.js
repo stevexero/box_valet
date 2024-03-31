@@ -1,7 +1,6 @@
 import { Provider } from 'react-redux';
 import { ClerkProvider } from '@clerk/nextjs';
 import { store } from '../store/store';
-import '@/styles/globals.css';
 import '@/styles/output.css';
 
 export default function App({ Component, pageProps }) {

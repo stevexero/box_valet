@@ -1,4 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap');
+
 /* styles/styles.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.cl-internal-b3fm6y {
+  display: none;
+}
+
+.cl-formButtonPrimary {
+  background: var(--red-orange);
+}
+
+.cl-formButtonPrimary:hover {
+  background-color: var(--red-orange);
+}
