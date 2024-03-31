@@ -1,12 +1,11 @@
 import { SignIn } from '@clerk/clerk-react';
 import Layout from '@/components/Layout';
-import styles from '@/styles/signin.module.css';
 
 const SignInPage = () => {
   return (
     <Layout>
-      <main className={`${styles.main} container`}>
-        <div className={styles.container}>
+      <main className='w-screen flex items-center justify-center'>
+        <div className='py-24 px-0'>
           <SignIn signUpUrl='/signup' />
         </div>
       </main>
