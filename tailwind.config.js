@@ -8,6 +8,7 @@ module.exports = {
     './components/landingpage/sections/overview/Overview.jsx',
     './components/landingpage/sections/overview/card/Card.jsx',
     './components/landingpage/sections/benefits/Benefits.jsx',
+    './components/landingpage/sections/calltoaction/CallToAction.jsx',
   ],
   theme: {
     extend: {

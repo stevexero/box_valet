@@ -71,7 +71,7 @@ export default function Navbar() {
         </div>
       </nav>
       {/* MOBILE */}
-      <nav className='w-full bg-white py-1 px-4 flex flex-row items-center justify-between fixed top-0 lg:hidden'>
+      <nav className='w-full bg-white py-1 px-4 flex flex-row items-center justify-between fixed z-20 top-0 lg:hidden'>
         <div className='relative z-20'>
           <Link href='/'>
             <Image
