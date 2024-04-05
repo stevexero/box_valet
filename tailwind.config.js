@@ -5,6 +5,7 @@ module.exports = {
     './pages/howitworks.jsx',
     './pages/signin.jsx',
     './pages/signup.jsx',
+    './pages/createuser.jsx',
     './pages/contact.jsx',
     './components/navbar/Navbar.jsx',
     './components/footer/Footer.jsx',

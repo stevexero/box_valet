@@ -6,7 +6,7 @@ const SignUpPage = () => {
     <Layout>
       <main className='w-screen flex items-center justify-center'>
         <div className='py-24 px-0'>
-          <SignUp signInUrl='/signin' />
+          <SignUp signInUrl='/signin' afterSignUpUrl='/createuser' />
         </div>
       </main>
     </Layout>

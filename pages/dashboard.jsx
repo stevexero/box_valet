@@ -1,4 +1,4 @@
-import { UserButton, useAuth } from '@clerk/nextjs';
+import { UserButton, useAuth, useUser } from '@clerk/nextjs';
 import { useEffect } from 'react';
 
 const DotIcon = () => {
@@ -24,10 +24,15 @@ const CustomPage = () => {
 
 const Dashboard = () => {
   const { userId, isSignedIn } = useAuth();
+  const { user } = useUser();
 
   useEffect(() => {
     isSignedIn && console.log(userId);
   }, [isSignedIn, userId]);
+
+  useEffect(() => {
+    user && console.log(user.isFirstSignIn);
+  }, [user]);
 
   return (
     <div>
