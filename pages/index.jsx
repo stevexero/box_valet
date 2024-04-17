@@ -6,10 +6,13 @@ import Overview from '@/components/landingpage/sections/overview/Overview';
 import Benefits from '@/components/landingpage/sections/benefits/Benefits';
 import CallToAction from '@/components/landingpage/sections/calltoaction/CallToAction';
 import Testimonials from '@/components/landingpage/sections/testimonials/Testimonials';
+import useRedirect from '@/hooks/useRedirect';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
+  useRedirect();
+
   return (
     <Layout>
       <Head>

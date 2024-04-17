@@ -19,7 +19,7 @@ export default authMiddleware({
   ],
   // Routes that can always be accessed, and have
   // no authentication information
-  ignoredRoutes: [],
+  ignoredRoutes: ['/signout'],
 });
 
 export const config = {
