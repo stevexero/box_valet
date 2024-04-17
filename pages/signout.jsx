@@ -1,66 +1,21 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { useUser, useAuth } from '@clerk/nextjs';
+import { useUser, useClerk } from '@clerk/nextjs';
 
 const CreateUser = () => {
   const { isSignedIn, user } = useUser();
-  const { getToken } = useAuth();
+  const { signOut } = useClerk();
   const router = useRouter();
-  const addUserCalled = useRef(false);
-  const [bearerToken, setBearerToken] = useState('');
 
   useEffect(() => {
-    console.log('create user component');
-  }, []);
-
-  useEffect(() => {
-    const userToken = async () => {
-      const token = await getToken();
-      return token;
-    };
-
-    if (isSignedIn) {
-      userToken().then((token) => setBearerToken(token));
-    }
-  }, [getToken, isSignedIn]);
-
-  useEffect(() => {
-    if (user === undefined) {
-      // User state is still resolving
-      return;
-    }
-
-    if (isSignedIn && user && !addUserCalled.current && bearerToken) {
-      console.log('calling api: /api/user/addUser');
-      addUserCalled.current = true;
-
-      const userData = {
-        user_id: user.id,
-        email: user.primaryEmailAddress.emailAddress,
-      };
-
-      fetch(`/api/user/addUser`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${bearerToken}`,
-        },
-        body: JSON.stringify(userData),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          console.log('User added:', data);
-          router.push('/dashboard');
-        })
-        .catch((error) => {
-          // TODO: Add error screen or popup
-          console.error('Error adding user:', error);
-        });
+    if (isSignedIn && user) {
+      setTimeout(() => {
+        signOut(() => router.push('/'));
+      }, 1000);
     } else {
-      console.log("failed 'if (isSignedIn && user && !addUserCalled.current)'");
-      router.push('/signin');
+      router.push('/');
     }
-  }, [isSignedIn, user, router, bearerToken]);
+  }, [isSignedIn, user, router, signOut]);
 
   return (
     <main className='w-screen h-screen flex flex-col items-center justify-center'>
@@ -83,7 +38,7 @@ const CreateUser = () => {
         </svg>
         <span className='sr-only'>Loading...</span>
       </div>
-      <h1 className='mt-8'>Creating your BoxValet profile</h1>
+      <h1 className='mt-8'>Signing Out</h1>
     </main>
   );
 };
