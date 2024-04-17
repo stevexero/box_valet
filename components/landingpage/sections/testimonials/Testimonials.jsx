@@ -40,11 +40,6 @@ export default function Testimonials() {
     emblaApi.on('select', onSelect);
   }, [emblaApi, onInit, onSelect]);
 
-  // For production debugging
-  useEffect(() => {
-    console.log(process.env.NEXT_PUBLIC_API_URI);
-  }, []);
-
   return (
     <section
       id='Testimonials'

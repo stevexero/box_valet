@@ -4,9 +4,9 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     console.log('Calling flask api');
     const { user_id, email } = req.body;
-    const flaskApiUrl = `${process.env.NEXT_PUBLIC_API_URI}/add-user`;
+    const flaskApiUrl = `${process.env.API_URI}/add-user`;
 
-    console.log(NEXT_PUBLIC_API_URI);
+    console.log('From addUser api: ' + flaskApiUrl);
 
     const token = req.headers.authorization;
 
