@@ -43,7 +43,6 @@ export default function Testimonials() {
   // For production debugging
   useEffect(() => {
     console.log(process.env.NEXT_PUBLIC_API_URI);
-    console.log(process.env.API_URI);
   }, []);
 
   return (
