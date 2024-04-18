@@ -1,4 +1,5 @@
-import { UserButton } from '@clerk/nextjs';
+import { UserButton, useAuth } from '@clerk/nextjs';
+import { useEffect } from 'react';
 
 const DotIcon = () => {
   return (
@@ -22,6 +23,17 @@ const CustomPage = () => {
 };
 
 const Dashboard = () => {
+  const { getToken } = useAuth();
+
+  useEffect(() => {
+    const userToken = async () => {
+      const token = await getToken();
+      console.log(token);
+    };
+
+    userToken();
+  }, [getToken]);
+
   return (
     <div>
       Dashboard
