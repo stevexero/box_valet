@@ -12,10 +12,6 @@ export default authMiddleware({
     '/termsofservice',
     '/signin',
     '/signup',
-    // '/api/items/', // TEMP: Allow unauthenticated access to this API route
-    // '/api/items/getAll', // TEMP: Allow unauthenticated access to this API route
-    // '/api/user/', // TEMP: Allow unauthenticated access to this API route
-    // '/api/user/addUser', // TEMP: Allow unauthenticated access to this API route
   ],
   // Routes that can always be accessed, and have
   // no authentication information

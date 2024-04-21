@@ -47,7 +47,8 @@ const GetCurrentUser = () => {
         })
         .catch((error) => {
           console.error('Error fetching user:', error);
-          router.push('/error'); // Redirect to an error page or display a message
+          // router.push('/error'); // Redirect to an error page or display a message
+          router.push('/signin');
         });
     }
   }, [isSignedIn, user, bearerToken, router, getToken]);
