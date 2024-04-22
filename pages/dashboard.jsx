@@ -22,10 +22,10 @@ const GetCurrentUser = () => {
 
     if (user === undefined) return; // User state still resolving, do nothing
 
-    // if (!isSignedIn) {
-    //   router.push('/signin');
-    //   return;
-    // }
+    if (!isSignedIn) {
+      router.push('/signin');
+      return;
+    }
 
     if (user && bearerToken) {
       console.log('calling api: /api/user/getCurrentUser');
@@ -40,20 +40,18 @@ const GetCurrentUser = () => {
         .then((data) => {
           // console.log('User fetched:', data);
           if (data.user_role === 'customer_active') {
-            // router.push('/customerDashboard');
-            console.log(data.user_role);
+            router.push('/customerDashboard');
           } else if (data.user_role === 'admin_owner') {
-            // router.push('/ownerDashboard');
-            console.log(data.user_role);
+            router.push('/ownerDashboard');
           }
         })
         .catch((error) => {
           console.error('Error fetching user:', error);
           // router.push('/error'); // Redirect to an error page or display a message
-          // router.push('/signin');
+          router.push('/signin');
         });
     }
-  }, [isSignedIn, user, bearerToken, getToken]);
+  }, [isSignedIn, user, bearerToken, router, getToken]);
 
   return (
     <main className='w-screen h-screen flex flex-col items-center justify-center'>

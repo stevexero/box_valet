@@ -50,7 +50,7 @@ const CreateUser = () => {
         .then((response) => response.json())
         .then((data) => {
           console.log('User added:', data);
-          // router.push('/dashboard');
+          router.push('/dashboard');
         })
         .catch((error) => {
           // TODO: Add error screen or popup
@@ -58,9 +58,9 @@ const CreateUser = () => {
         });
     } else {
       console.log("failed 'if (isSignedIn && user && !addUserCalled.current)'");
-      // router.push('/signin');
+      router.push('/signin');
     }
-  }, [isSignedIn, user, bearerToken]);
+  }, [isSignedIn, user, router, bearerToken]);
 
   return (
     <main className='w-screen h-screen flex flex-col items-center justify-center'>
