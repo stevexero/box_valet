@@ -1,5 +1,6 @@
-import { SignIn } from '@clerk/clerk-react';
+// import { SignIn } from '@clerk/clerk-react';
 import Layout from '@/components/Layout';
+import SignInComponent from '@/components/auth/SignInComponent';
 
 const SignInPage = () => {
   return (
@@ -7,7 +8,8 @@ const SignInPage = () => {
       <main className='w-screen flex items-center justify-center'>
         <div className='py-24 px-0'>
           {/* <SignIn signUpUrl='/signup' afterSignUpUrl='/createuser' /> */}
-          <SignIn signUpUrl='/signup' />
+          {/* <SignIn signUpUrl='/signup' /> */}
+          <SignInComponent />
         </div>
       </main>
     </Layout>
