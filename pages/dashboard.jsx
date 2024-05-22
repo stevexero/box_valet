@@ -1,81 +1,38 @@
-// import { useEffect, useState } from 'react';
-// import { useRouter } from 'next/router';
-// import { useUser, useAuth } from '@clerk/nextjs';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { logout, reset } from '@/features/auth/authSlice';
+import { useAuthStatus } from '@/hooks/useAuthStatus';
+import { useDispatch, useSelector } from 'react-redux';
+import DashboardLayout from '@/components/DashboardLayout';
+import Loading from '@/components/Loading';
 
 const Dashboard = () => {
-  return <h1>Hello dashboard</h1>;
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const { loggedIn, checkingStatus } = useAuthStatus();
+  const { user } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (!checkingStatus && !loggedIn) {
+      router.push('/signin');
+    }
+  }, [loggedIn, checkingStatus, router]);
+
+  const handleClick = () => {
+    dispatch(logout());
+    dispatch(reset());
+  };
+
+  if (checkingStatus || !loggedIn || !user) {
+    return <Loading />;
+  }
+
+  return (
+    <DashboardLayout>
+      {user && user.user_role} Dashboard
+      <button onClick={handleClick}>Logout</button>
+    </DashboardLayout>
+  );
 };
 
 export default Dashboard;
-
-// const GetCurrentUser = () => {
-//   const { isSignedIn, user } = useUser();
-//   const { getToken } = useAuth();
-//   const router = useRouter();
-//   const [bearerToken, setBearerToken] = useState('');
-
-//   useEffect(() => {
-//     // console.log('dashboard redirect component');
-
-//     const fetchUserToken = async () => {
-//       if (isSignedIn) {
-//         const token = await getToken();
-//         setBearerToken(token);
-//       }
-//     };
-
-//     fetchUserToken();
-
-//     if (user === undefined) return; // User state still resolving, do nothing
-
-//     if (!isSignedIn) {
-//       router.push('/signin');
-//       return;
-//     }
-
-//     if (user && bearerToken) {
-//       console.log('calling api: /api/user/getCurrentUser');
-//       fetch(`/api/user/getCurrentUser`, {
-//         method: 'GET',
-//         headers: {
-//           'Content-Type': 'application/json',
-//           Authorization: `Bearer ${bearerToken}`,
-//         },
-//       })
-//         .then((response) => response.json())
-//         .then((data) => {
-//           // console.log('User fetched:', data);
-//           if (data.user_role === 'customer_active') {
-//             router.push('/customerDashboard');
-//           } else if (data.user_role === 'admin_owner') {
-//             router.push('/ownerDashboard');
-//           }
-//         })
-//         .catch((error) => {
-//           console.error('Error fetching user:', error);
-//           // router.push('/error'); // Redirect to an error page or display a message
-//           router.push('/signin');
-//         });
-//     }
-//   }, [isSignedIn, user, bearerToken, router, getToken]);
-
-//   return (
-//     <main className='w-screen h-screen flex flex-col items-center justify-center'>
-//       <div role='status'>
-//         <svg
-//           aria-hidden='true'
-//           className='inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-red-600'
-//           viewBox='0 0 100 101'
-//           fill='none'
-//           xmlns='http://www.w3.org/2000/svg'
-//         >
-//           {/* SVG content */}
-//         </svg>
-//         <span className='sr-only'>Loading...</span>
-//       </div>
-//       <h1 className='mt-8'>Redirecting you to your BoxValet dashboard</h1>
-//     </main>
-//   );
-// };
-
-// export default GetCurrentUser;
