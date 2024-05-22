@@ -23,6 +23,11 @@ const register = async (userData) => {
   }
 };
 
+/*
+ *
+ * Login User
+ *
+ */
 const login = async (userData) => {
   const response = await fetch(api_uri + 'login', {
     method: 'POST',
