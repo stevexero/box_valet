@@ -1,24 +1,6 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
-import { useUser, useClerk } from '@clerk/nextjs';
-
-const CreateUser = () => {
-  const { isSignedIn, user } = useUser();
-  const { signOut } = useClerk();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (isSignedIn && user) {
-      setTimeout(() => {
-        signOut(() => router.push('/'));
-      }, 1000);
-    } else {
-      router.push('/');
-    }
-  }, [isSignedIn, user, router, signOut]);
-
+const Loading = () => {
   return (
-    <main className='w-screen h-screen flex flex-col items-center justify-center'>
+    <div className='w-screen h-screen flex flex-col items-center justify-center'>
       <div role='status'>
         <svg
           aria-hidden='true'
@@ -38,9 +20,9 @@ const CreateUser = () => {
         </svg>
         <span className='sr-only'>Loading...</span>
       </div>
-      <h1 className='mt-8'>Signing Out</h1>
-    </main>
+      {/* <h1 className='mt-8'>Redirecting</h1> */}
+    </div>
   );
 };
 
-export default CreateUser;
+export default Loading;
