@@ -1,16 +1,16 @@
-import nextConnect from 'next-connect';
-import passport from '../../middleware/passport.js';
+// import nextConnect from 'next-connect';
+// import passport from '../../middleware/passport.js';
 
-const handler = nextConnect();
+// const handler = nextConnect();
 
-handler.use(passport.initialize());
+// handler.use(passport.initialize());
 
-handler.get((req, res) => {
-  if (req.isAuthenticated()) {
-    res.json({ message: 'You are authenticated' });
-  } else {
-    res.status(401).json({ message: 'Unauthorized' });
-  }
-});
+// handler.get((req, res) => {
+//   if (req.isAuthenticated()) {
+//     res.json({ message: 'You are authenticated' });
+//   } else {
+//     res.status(401).json({ message: 'Unauthorized' });
+//   }
+// });
 
-export default handler;
+// export default handler;
