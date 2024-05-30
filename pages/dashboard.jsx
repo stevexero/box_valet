@@ -5,6 +5,7 @@ import { useAuthStatus } from '@/hooks/useAuthStatus';
 import { useDispatch, useSelector } from 'react-redux';
 import DashboardLayout from '@/components/DashboardLayout';
 import Loading from '@/components/Loading';
+import Walkthrough from '@/components/dashboard/walkthrough/Walkthrough';
 
 const Dashboard = () => {
   const router = useRouter();
@@ -31,6 +32,7 @@ const Dashboard = () => {
     <DashboardLayout>
       {user && user.user_role} Dashboard
       <button onClick={handleClick}>Logout</button>
+      {user && user.is_verified ? <h1>Verified</h1> : <Walkthrough />}
     </DashboardLayout>
   );
 };
