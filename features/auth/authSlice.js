@@ -7,12 +7,18 @@ const user = getLocalStorageItem('boxvaletuser');
 const initialState = {
   user: user ? user : null,
   currentUser: {},
+  resend_response: { id: null },
   isError: false,
   isSuccess: false,
   isLoading: false,
   message: '',
 };
 
+/*
+ *
+ * Register User
+ *
+ */
 export const register = createAsyncThunk(
   'auth/register',
   async (userData, thunkAPI) => {
@@ -54,6 +60,11 @@ export const login = createAsyncThunk(
   }
 );
 
+/*
+ *
+ * Logout User
+ *
+ */
 export const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
     return await authService.logout();
@@ -66,6 +77,52 @@ export const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     return thunkAPI.rejectWithValue(message);
   }
 });
+
+/*
+ *
+ * Send Verification Code
+ *
+ */
+export const sendVerificationCode = createAsyncThunk(
+  'auth/sendVerificationCode',
+  async (email, thunkAPI) => {
+    try {
+      return await authService.sendVerificationCode(email);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
+/*
+ *
+ * Submit Verification Code
+ *
+ */
+export const submitVerificationCode = createAsyncThunk(
+  'auth/submitVerificationCode',
+  async (userData, thunkAPI) => {
+    try {
+      return await authService.submitVerificationCode(userData);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
 
 const authSlice = createSlice({
   name: 'auth',
@@ -80,6 +137,7 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      /* Register */
       .addCase(register.pending, (state) => {
         state.isLoading = true;
       })
@@ -94,6 +152,7 @@ const authSlice = createSlice({
         state.message = action.payload;
         state.user = null;
       })
+      /* Login */
       .addCase(login.pending, (state) => {
         state.isLoading = true;
       })
@@ -108,10 +167,41 @@ const authSlice = createSlice({
         state.isError = true;
         state.message = action.payload;
       })
+      /* Send Verification Code */
+      .addCase(sendVerificationCode.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(sendVerificationCode.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.resend_response = { ...action.payload };
+      })
+      .addCase(sendVerificationCode.rejected, (state, action) => {
+        state.isLoading = false;
+        state.user = null;
+        state.isError = true;
+        state.message = action.payload;
+      })
+      /* Submit Verification Code */
+      .addCase(submitVerificationCode.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(submitVerificationCode.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.user = action.payload;
+      })
+      .addCase(submitVerificationCode.rejected, (state, action) => {
+        state.isLoading = false;
+        state.user = null;
+        state.isError = true;
+        state.message = action.payload;
+      })
+      /* Logout */
       .addCase(logout.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(logout.fulfilled, (state, action) => {
+      .addCase(logout.fulfilled, (state) => {
         state.isLoading = false;
         state.isSuccess = true;
         state.user = null;
