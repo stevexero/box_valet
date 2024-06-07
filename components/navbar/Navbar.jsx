@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-// import { useUser } from '@clerk/nextjs';
 
 export default function Navbar() {
-  // const { isSignedIn } = useUser();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -47,10 +45,8 @@ export default function Navbar() {
               <li className='ml-8'>
                 <Link
                   className='hover:text-accent-primary duration-200'
-                  // href={`${isSignedIn ? '/signout' : '/signin'}`}
                   href='/signin'
                 >
-                  {/* {isSignedIn ? 'SIGN OUT' : 'SIGN IN'} */}
                   SIGN IN
                 </Link>
               </li>
@@ -65,10 +61,8 @@ export default function Navbar() {
               <li className='ml-8'>
                 <Link
                   className='bg-accent-primary text-white rounded-lg px-6 py-3 mt-4 border-2 border-accent-primary text-center'
-                  // href={`${isSignedIn ? '/dashboard' : '/booking'}`}
                   href='/booking'
                 >
-                  {/* {isSignedIn ? 'DASHBOARD' : 'BOOK NOW'} */}
                   BOOK NOW
                 </Link>
               </li>
