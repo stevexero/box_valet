@@ -124,6 +124,29 @@ export const submitVerificationCode = createAsyncThunk(
   }
 );
 
+/*
+ *
+ * Update User Email
+ *
+ */
+export const updateUserEmail = createAsyncThunk(
+  'auth/updateUserEmail',
+  async (userData, thunkAPI) => {
+    try {
+      return await authService.updateUserEmail(userData);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
 const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -178,7 +201,6 @@ const authSlice = createSlice({
       })
       .addCase(sendVerificationCode.rejected, (state, action) => {
         state.isLoading = false;
-        state.user = null;
         state.isError = true;
         state.message = action.payload;
       })
@@ -193,7 +215,6 @@ const authSlice = createSlice({
       })
       .addCase(submitVerificationCode.rejected, (state, action) => {
         state.isLoading = false;
-        state.user = null;
         state.isError = true;
         state.message = action.payload;
       })
@@ -207,6 +228,20 @@ const authSlice = createSlice({
         state.user = null;
       })
       .addCase(logout.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+      })
+      /* Update User Email */
+      .addCase(updateUserEmail.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updateUserEmail.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.user = action.payload;
+      })
+      .addCase(updateUserEmail.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;

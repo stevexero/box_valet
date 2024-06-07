@@ -124,12 +124,38 @@ const submitVerificationCode = async (userData) => {
   }
 };
 
+/*
+ *
+ * Update User Email
+ *
+ */
+const updateUserEmail = async (userData) => {
+  const response = await fetch(api_uri + 'updateuseremail', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    credentials: 'include',
+    body: JSON.stringify(userData),
+  });
+
+  let data = await response.json();
+
+  if (response.ok) {
+    setLocalStorageItem('boxvaletuser', data);
+    return { ...data };
+  } else {
+    throw new Error(data.error || 'Unable to update email address');
+  }
+};
+
 const authService = {
   register,
   login,
   logout,
   sendVerificationCode,
   submitVerificationCode,
+  updateUserEmail,
 };
 
 export default authService;
