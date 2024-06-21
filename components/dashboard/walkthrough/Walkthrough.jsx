@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import VerifyEmail from './VerifyEmail';
 import EnterEmailCode from './EnterEmailCode';
 import ThankYou from './ThankYou';
+import OwnerDashboard from '../owner/OwnerDashboard';
 
 const Walkthrough = () => {
   const { resend_response, user } = useSelector((state) => state.auth);
@@ -23,7 +24,9 @@ const Walkthrough = () => {
 
   return (
     <div>
-      {isEmailVerified ? (
+      {user.user_role === 'owner_active' ? (
+        <OwnerDashboard />
+      ) : isEmailVerified ? (
         <ThankYou />
       ) : isCodeSent ? (
         <EnterEmailCode />

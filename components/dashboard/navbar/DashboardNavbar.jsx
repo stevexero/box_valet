@@ -10,12 +10,12 @@ const DashboardNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    if (user && user.role) {
-      if (user.role === 'customer_active') {
+    if (user && user.user_role) {
+      if (user.user_role === 'customer_active') {
         setUserRole('Customer');
-      } else if (user.role === 'admin_active') {
+      } else if (user.user_role === 'admin_active') {
         setUserRole('Admin');
-      } else if (user.role === 'owner_active') {
+      } else if (user.user_role === 'owner_active') {
         setUserRole('Owner');
       } else {
         setUserRole('');
