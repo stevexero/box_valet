@@ -1,33 +1,33 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getAllCustomers } from '@/features/user/userSlice';
+// import { useEffect } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { getAllCustomers } from '@/features/user/userSlice';
 
-const Customers = () => {
-  const dispatch = useDispatch();
-  const { customers, isLoading } = useSelector((state) => state.user);
+const Customers = ({ customers }) => {
+  // const dispatch = useDispatch();
+  // const { customers, isLoading } = useSelector((state) => state.user);
 
-  useEffect(() => {
-    if (customers.length === 0) {
-      dispatch(getAllCustomers());
-    }
-  }, [dispatch, customers.length]);
+  // useEffect(() => {
+  //   if (customers.length === 0) {
+  //     dispatch(getAllCustomers());
+  //   }
+  // }, [dispatch, customers.length]);
 
-  const handleRefresh = () => {
-    dispatch(getAllCustomers());
-  };
+  // const handleRefresh = () => {
+  //   dispatch(getAllCustomers());
+  // };
 
-  if (isLoading) {
-    return <h1>Loading...</h1>;
-  }
+  // if (isLoading) {
+  //   return <h1>Loading...</h1>;
+  // }
 
   return (
     <div className='overflow-x-auto'>
-      <button
+      {/* <button
         onClick={handleRefresh}
         className='mb-4 bg-accent-primary text-white rounded-lg px-4 py-2 border-2 border-accent-primary text-center'
       >
         Refresh Customers
-      </button>
+      </button> */}
       {customers && customers.length > 0 ? (
         <table className='min-w-full bg-white border border-gray-300'>
           <thead>
