@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }) {
       <Script
         defer
         src='https://cloud.umami.is/script.js'
-        data-website-id={process.env.NEXT_UMAMI_SITE_ID}
+        data-website-id={process.env.NEXT_PUBLIC_UMAMI_SITE_ID}
       />
       <Component {...pageProps} />
     </Provider>
